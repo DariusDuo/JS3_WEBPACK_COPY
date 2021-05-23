@@ -5,7 +5,7 @@ function banner(title, btnText) {
   const h2 = document.createElement("h2");
   h2.textContent = title;
   const p = document.createElement("p");
-  p.textContent = "THis is a very nice Banner";
+  p.textContent = "This is a very nice Banner";
   const button = document.createElement("button");
   button.textContent = btnText;
 
