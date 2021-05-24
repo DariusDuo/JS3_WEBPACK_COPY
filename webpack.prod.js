@@ -14,6 +14,7 @@ module.exports = {
     filename: "final.bundle.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
+    assetModuleFilename: "images/[name][ext]",
   },
   module: {
     rules: [
@@ -41,14 +42,12 @@ module.exports = {
   },
   plugins: [
     new ImageMinimizerPlugin({
-      filename: "images/[name].webp",
-      deleteOriginalAssets: true,
       minimizerOptions: {
         plugins: [
           // ["imagemin-webp"],
           ["svgo"],
           ["gifsicle"],
-          ["pngquant"],
+          ["pngquant", { quality: [0.3, 0.6] }],
           ["mozjpeg", { quality: 70 }],
         ],
       },
